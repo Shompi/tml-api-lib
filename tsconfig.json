@@ -8,12 +8,15 @@
     "jsx": "react-jsx",
     "allowJs": true,
     "types": ["bun"],
-
+    "declaration": true,
+    "rootDir": "./src",
+    "outDir": "./dist",
     // Bundler mode
     "moduleResolution": "bundler",
+    "rewriteRelativeImportExtensions": true,
     "allowImportingTsExtensions": true,
     "verbatimModuleSyntax": true,
-    "noEmit": true,
+    "noEmit": false,
 
     // Best practices
     "strict": true,
@@ -26,5 +29,8 @@
     "noUnusedLocals": false,
     "noUnusedParameters": false,
     "noPropertyAccessFromIndexSignature": false
-  }
+  },
+  "include": [
+    "./src/**/*"
+  ]
 }
