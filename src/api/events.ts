@@ -1,5 +1,5 @@
-import { APIError } from "../extends/api_errors"
-import { API_URL, buildUrl } from "./helpers"
+import { APIError } from "../extends/api_errors.ts"
+import { API_URL, buildUrl } from "./helpers.ts"
 
 type APIErrorBase = {
   message: string

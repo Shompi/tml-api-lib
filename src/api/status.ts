@@ -1,4 +1,4 @@
-import { API_URL } from "./helpers"
+import { API_URL } from "./helpers.ts"
 
 type APIStatusOKResponse = {
   /** Custom api message */
