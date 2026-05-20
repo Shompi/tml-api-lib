@@ -14,6 +14,7 @@ type RankingQueryParams = {
 
   /**
    * Whether to precalculate data of the players (apm, vs, pps and rank variations)
+   * This also will calculate the variations of TR and Glicko of each CountryLeaderboard
    */
   precalculate?: boolean
 
