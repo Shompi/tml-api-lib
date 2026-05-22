@@ -4,6 +4,17 @@
   "version": "0.0.2",
   "type": "module",
   "types": "./dist/index.d.ts",
+  "main": "./dist/index.js",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ShompiFlen/tetrislatam-api"
+  },
   "files": [
     "dist"
   ],
