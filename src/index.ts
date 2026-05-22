@@ -1,3 +1,4 @@
+import { CoachingAPI } from "./api/coaching.ts"
 import { EventsAPI } from "./api/events.ts"
 import { RankingsAPI } from "./api/rankings.ts"
 import { StatusAPI } from "./api/status.ts"
@@ -8,4 +9,5 @@ export const TMLAPI = {
   events: EventsAPI,
   webposts: WebpagePostsAPI,
   ranking: RankingsAPI,
+  coaching: CoachingAPI,
 }
