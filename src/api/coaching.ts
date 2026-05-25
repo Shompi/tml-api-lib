@@ -88,11 +88,11 @@ const Routes = {
     claim: (id: string, coach_id: string) => `${API_URL}/api/coaching/tickets/${id}/claim?coachId=${coach_id}` as const,
     /** This endpoint needs authentication */
     delete: (id: string) => `${API_URL}/api/coaching/tickets/${id}` as const,
-  }
+  },
 }
 
 export const CoachingAPI = {
-  coach: {
+  coaches: {
     getAll: async () => {
       const response = await fetch(Routes.Coach.getAll, { method: "GET" })
 
@@ -191,7 +191,7 @@ export const CoachingAPI = {
       return true
     },
   },
-  student: {
+  students: {
     get: async (id: string) => {
 
       if (!id) throw new Error("You must provide a student id to this function.")
@@ -200,7 +200,7 @@ export const CoachingAPI = {
 
       return await response.json() as Promise<APIStudent>
     },
-    create: async (token: string, data: APIStudent) => {
+    create: async (token: string, data: APIStudentCreationData) => {
 
       if (!token) throw new Error("You must provide an authorization token to this function.")
 
@@ -238,7 +238,7 @@ export const CoachingAPI = {
       }>
     }
   },
-  ticket: {
+  tickets: {
     get: async (id: string) => {
 
       if (!id) throw new Error("You must provide a ticket id to this function.")
@@ -247,7 +247,7 @@ export const CoachingAPI = {
 
       return await response.json() as Promise<APICoachingTicket>
     },
-    create: async (token: string, data: APICoachingTicket) => {
+    create: async (token: string, data: APICoachingTicketCreationData) => {
 
       if (!token) throw new Error("You must provide an authorization token to this function.")
 
