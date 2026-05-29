@@ -65,6 +65,7 @@ const Routes = {
   Coach: {
     getAll: `${API_URL}/api/coaching/coach` as const,
     get: (id: string) => `${API_URL}/api/coaching/coach/${id}` as const,
+    getTickets: (coach_id: string) => `${API_URL}/api/coaching/coach/${coach_id}/tickets` as const,
     /** This endpoint needs authentication */
     create: `${API_URL}/api/coaching/coach` as const,
     /** This endpoint needs authentication */
@@ -107,6 +108,16 @@ export const CoachingAPI = {
       const response = await fetch(Routes.Coach.get(id), { method: "GET" })
 
       const data = await response.json() as APICoach
+
+      return data
+    },
+    getTickets: async (coach_id: string) => {
+
+      if (!coach_id) throw new Error("You must provide a coach id to this function.")
+
+      const response = await fetch(Routes.Coach.getTickets(coach_id), { method: "GET" })
+
+      const data = await response.json() as APICoachingTicket[]
 
       return data
     },
@@ -323,7 +334,7 @@ export const CoachingAPI = {
           method: "DELETE"
         }, "The API responded with an error.")
       }
-      
+
       return await response.json() as Promise<APICoachingTicket>
     },
     claim: async (token: string, id: string, coach_id: string) => {
