@@ -279,10 +279,12 @@ export const CoachingAPI = {
         method: "GET",
       });
 
-      return (await response.json()) as Promise<{
+      const tickets = await response.json();
+
+      return tickets as {
         student: APIStudent;
         tickets: APICoachingTicket[];
-      }>;
+      };
     },
   },
   tickets: {
