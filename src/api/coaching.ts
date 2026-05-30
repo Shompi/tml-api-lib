@@ -271,7 +271,7 @@ export const CoachingAPI = {
 
       return (await response.json()) as Promise<APIStudent>;
     },
-    tickets: async (id: string) => {
+    getTickets: async (id: string) => {
       if (!id)
         throw new Error("You must provide a student id to this function.");
 
